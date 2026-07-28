@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">OpenSource AI Workspace project overview</title>
+  <desc id="desc">An employee asks in a preferred language, the orchestrator coordinates approved AI helpers and returns a checked answer with sources and approval controls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2fbf6"/>
+      <stop offset="1" stop-color="#f8fff0"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#005b45"/>
+      <stop offset="1" stop-color="#0b8060"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#003d2f" flood-opacity="0.13"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0b8060"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="650" rx="28" fill="url(#bg)"/>
+  <rect x="34" y="28" width="1132" height="100" rx="22" fill="url(#hero)"/>
+  <circle cx="92" cy="78" r="28" fill="#d9ff52"/>
+  <text x="92" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#00543f">E</text>
+  <text x="136" y="70" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#ffffff">OpenSource AI Workspace</text>
+  <text x="136" y="99" font-family="Arial, sans-serif" font-size="17" fill="#d8f4e8">One simple window. Many specialised AI helpers. Human control throughout.</text>
+
+  <path d="M282 337 H344" fill="none" stroke="#0b8060" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M611 337 H673" fill="none" stroke="#0b8060" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M940 337 H1002" fill="none" stroke="#0b8060" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="45" y="178" width="237" height="318" rx="24" fill="#ffffff" stroke="#c7e4d8" stroke-width="2"/>
+    <rect x="365" y="178" width="246" height="318" rx="24" fill="#ffffff" stroke="#88cbb7" stroke-width="3"/>
+    <rect x="694" y="178" width="246" height="318" rx="24" fill="#ffffff" stroke="#c7e4d8" stroke-width="2"/>
+    <rect x="1023" y="178" width="132" height="318" rx="24" fill="#ffffff" stroke="#c7e4d8" stroke-width="2"/>
+  </g>
+
+  <circle cx="164" cy="232" r="37" fill="#e7f8f0"/>
+  <path d="M148 222 h32 a9 9 0 0 1 9 9 v10 a9 9 0 0 1-9 9 h-13 l-9 8 v-8 h-10 a9 9 0 0 1-9-9 v-10 a9 9 0 0 1 9-9z" fill="none" stroke="#00684f" stroke-width="4"/>
+  <text x="164" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#153a30">Employee asks</text>
+  <text x="164" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#50645e">
+    <tspan x="164" dy="0">Speak or type naturally</tspan>
+    <tspan x="164" dy="25">in English, Hindi,</tspan>
+    <tspan x="164" dy="25">Hinglish or another</tspan>
+    <tspan x="164" dy="25">Indian language</tspan>
+  </text>
+  <rect x="83" y="431" width="162" height="36" rx="18" fill="#f1fad0"/>
+  <text x="164" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#4d6500">Questions • Drafts • Tasks</text>
+
+  <circle cx="488" cy="232" r="37" fill="#d9ff52"/>
+  <path d="M472 215 h32 v34 h-32z M478 222 h20 M478 230 h20 M478 238 h12" fill="none" stroke="#00543f" stroke-width="3"/>
+  <text x="488" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#153a30">Orchestrator leads</text>
+  <text x="488" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#50645e">
+    <tspan x="488" dy="0">Understands the goal</tspan>
+    <tspan x="488" dy="25">checks access, splits work</tspan>
+    <tspan x="488" dy="25">and chooses the best</tspan>
+    <tspan x="488" dy="25">model or tool for each step</tspan>
+  </text>
+  <rect x="401" y="431" width="174" height="36" rx="18" fill="#e7f8f0"/>
+  <text x="488" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#00684f">Progress stays visible</text>
+
+  <circle cx="817" cy="232" r="37" fill="#e7f8f0"/>
+  <circle cx="804" cy="228" r="9" fill="none" stroke="#00684f" stroke-width="3"/>
+  <circle cx="830" cy="228" r="9" fill="none" stroke="#00684f" stroke-width="3"/>
+  <path d="M804 237 v13 M830 237 v13 M804 245 h26" fill="none" stroke="#00684f" stroke-width="3"/>
+  <text x="817" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#153a30">AI helpers work</text>
+  <text x="817" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#50645e">
+    <tspan x="817" dy="0">Approved the organization knowledge</tspan>
+    <tspan x="817" dy="25">plus local models for</tspan>
+    <tspan x="817" dy="25">research, planning, writing,</tspan>
+    <tspan x="817" dy="25">analysis and safe actions</tspan>
+  </text>
+  <rect x="731" y="431" width="172" height="36" rx="18" fill="#f1fad0"/>
+  <text x="817" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#4d6500">Open-source • Self-hosted</text>
+
+  <circle cx="1089" cy="232" r="37" fill="#d9ff52"/>
+  <path d="M1074 233 l10 10 21-24" fill="none" stroke="#00543f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1089" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#153a30">One answer</text>
+  <text x="1089" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#50645e">
+    <tspan x="1089" dy="0">Checked</tspan>
+    <tspan x="1089" dy="24">combined</tspan>
+    <tspan x="1089" dy="24">translated</tspan>
+    <tspan x="1089" dy="24">with sources</tspan>
+  </text>
+  <rect x="1041" y="431" width="96" height="36" rx="18" fill="#e7f8f0"/>
+  <text x="1089" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#00684f">Approval first</text>
+
+  <rect x="45" y="540" width="1110" height="72" rx="18" fill="#083f32"/>
+  <text x="600" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#d9ff52">Simple for employees • Powerful behind the scenes • Controlled by the organization</text>
+  <text x="600" y="594" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#cde8de">Designed for a 50–60 employee pilot across business, operations, finance, accounts, support and more.</text>
+</svg>

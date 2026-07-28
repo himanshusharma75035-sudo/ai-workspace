@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$PROJECT_DIR"
+./scripts/stop.sh
+./scripts/stop_ollama.sh
+./scripts/start_ollama.sh
+./scripts/run.sh
+./scripts/status.sh
+

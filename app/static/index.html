@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>OpenSource AI Workspace</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23d3f062'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='42' fill='%23084a38'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/styles.css?v=19">
+  <link rel="stylesheet" href="/assets/enhancements.css?v=2">
+</head>
+<body>
+  <div id="loginView" class="login-page">
+    <section class="login-story">
+      <div class="brand-lockup"><span class="brand-mark">O</span><span data-assistant-name>OpenSource AI Workspace</span></div>
+      <div class="story-copy">
+        <span class="eyebrow">Built for every <span data-organization-name>organization</span> team</span>
+        <h1>Ask naturally.<br><em>Work confidently.</em></h1>
+        <p>A multilingual AI workspace for organization knowledge, drafting and safe automation&mdash;grounded in approved sources.</p>
+        <div class="language-row"><span>English</span><span>&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</span><span>Hinglish</span></div>
+      </div>
+      <div class="trust-strip">
+        <div><strong>Private</strong><span>Department-aware access</span></div>
+        <div><strong>Grounded</strong><span>Source-backed answers</span></div>
+        <div><strong>Controlled</strong><span>Confirmation before action</span></div>
+      </div>
+    </section>
+    <section class="login-panel">
+      <form id="loginForm" class="login-card">
+        <div class="demo-flag">CEO prototype &middot; Demo authentication</div>
+        <h2>Welcome to <span data-assistant-name>OpenSource AI Workspace</span></h2>
+        <p>Use your organization email. Enterprise SSO should replace this screen before production.</p>
+        <label>Full name<input id="loginName" autocomplete="name" required placeholder="Your name"></label>
+        <label>Organization email<input id="loginEmail" type="email" autocomplete="email" required placeholder="name@company.example"></label>
+        <button class="primary-button" type="submit">Continue securely <span>&rarr;</span></button>
+        <div id="loginError" class="form-error"></div>
+        <small>No password is collected in this prototype.</small>
+      </form>
+    </section>
+  </div>
+
+  <div id="workspace" class="workspace hidden">
+    <aside class="sidebar">
+      <div class="brand-lockup sidebar-brand"><span class="brand-mark">O</span><span data-assistant-name>OpenSource AI Workspace</span></div>
+      <button id="newChatButton" class="new-chat">&#43; New conversation</button>
+      <section class="conversation-section" aria-label="Conversation history">
+        <div class="conversation-section-head"><span id="recentLabel">RECENT</span><button id="refreshConversations" type="button" aria-label="Refresh conversations" title="Refresh conversations">&#8635;</button></div>
+        <div id="conversationList" class="conversation-list"></div>
+      </section>
+      <nav>
+        <button class="nav-item active" data-view="chat"><span>&#9635;</span><span id="navAssistantLabel">Assistant</span></button>
+        <button class="nav-item" data-view="knowledge"><span>&#9671;</span>Knowledge</button>
+        <button class="nav-item owner-only" data-view="dashboard"><span>&#9638;</span>Quality dashboard</button>
+        <button class="nav-item owner-only" data-view="people"><span>&#9678;</span>People & access</button>
+        <button class="nav-item owner-only" data-view="audit"><span>&#8769;</span>Audit trail</button>
+        <button class="nav-item owner-only" data-view="system"><span>&#9881;</span>System control</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="safety-note"><span class="status-dot"></span><div><strong>Prototype mode</strong><small>External actions are simulated</small></div></div>
+        <button id="logoutButton" class="profile-button">
+          <span id="avatar" class="avatar">U</span>
+          <span><strong id="profileName">User</strong><small id="profileTeam">Public</small></span>
+          <span>&hellip;</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span id="viewEyebrow" class="eyebrow">AI ASSISTANT</span><h2 id="viewTitle">What can I help you accomplish?</h2></div>
+        <div class="topbar-actions">
+          <label class="language-control" for="languageSelector">
+            <span aria-hidden="true">&#127760;</span>
+            <select id="languageSelector" aria-label="AI language"></select>
+          </label>
+          <span id="modelStatus" class="model-status"><i></i>Checking model</span>
+          <span id="accessBadge" class="access-badge">Public access</span>
+        </div>
+      </header>
+
+      <section id="chatView" class="view chat-view">
+        <div id="welcomePanel" class="welcome-panel">
+          <div class="orb">O</div>
+          <h3 id="welcomeTitle">Start with the outcome you need</h3>
+          <p id="welcomeText">Speak or write in your selected language. I will route the request, use approved knowledge and show which models are working.</p>
+          <div class="prompt-grid">
+            <button class="prompt-card" data-prompt="Explain the organization's different businesses."><span>01</span><strong id="prompt1Title">Understand the organization</strong><small id="prompt1Text">Explain the organization's different businesses</small></button>
+            <button class="prompt-card" data-prompt="Draft an email to the CFO. Ask me every important missing question first."><span>02</span><strong id="prompt2Title">Draft with context</strong><small id="prompt2Text">Prepare a draft and identify missing inputs</small></button>
+            <button class="prompt-card" data-prompt="Help me automate a daily operations report. Ask about trigger, data, approval, failure handling and success metrics."><span>03</span><strong id="prompt3Title">Plan an automation</strong><small id="prompt3Text">Design a controlled workflow</small></button>
+          </div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <div class="composer-wrap">
+          <div class="composer">
+            <textarea id="messageInput" rows="1" placeholder="Message the assistant in English, Hindi or Hinglish&hellip;"></textarea>
+            <div class="composer-bottom">
+              <span id="sourceCheckText">Sources and access are checked before every answer</span>
+              <div class="composer-actions">
+                <button id="voiceButton" class="voice-button" type="button" aria-label="Start voice input" title="Start voice input">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v7a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 12h-2Z"/></svg>
+                </button>
+                <button id="sendButton" class="send-button" aria-label="Send">&uarr;</button>
+              </div>
+            </div>
+          </div>
+          <small id="disclaimerText">AI can make mistakes. Verify financial, compliance and operational decisions.</small>
+        </div>
+      </section>
+
+      <section id="knowledgeView" class="view hidden">
+        <div class="section-grid">
+          <article class="panel upload-panel">
+            <span class="eyebrow">ADD APPROVED KNOWLEDGE</span>
+            <h3>Teach through documents, not hidden model training</h3>
+            <p>Files are stored only in the assigned department collection. TXT, MD, CSV, JSON and PDF up to 10 MB.</p>
+            <form id="uploadForm">
+              <label class="drop-zone">
+                <input id="documentFile" name="file" type="file" accept=".txt,.md,.csv,.json,.pdf" required>
+                <span class="upload-icon">&uarr;</span>
+                <strong>Choose an approved document</strong>
+                <small>Nothing is shared with another department</small>
+              </label>
+              <label id="uploadTeamLabel" class="owner-only">Target department<select id="uploadTeam"></select></label>
+              <button class="primary-button" type="submit">Index document</button>
+              <div id="uploadResult" class="form-message"></div>
+            </form>
+          </article>
+          <article class="panel">
+            <div class="panel-header"><div><span class="eyebrow">CURRENT SOURCES</span><h3>Accessible knowledge</h3></div><button id="refreshDocs" class="quiet-button">Refresh</button></div>
+            <div id="documentsList" class="document-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="peopleView" class="view hidden owner-only">
+        <article class="panel">
+          <div class="panel-header"><div><span class="eyebrow">OWNER CONTROL</span><h3>People and department access</h3></div></div>
+          <p>Employees may request a team during onboarding, but only the owner can approve access.</p>
+          <div id="usersList" class="table-wrap"></div>
+        </article>
+      </section>
+
+      <section id="dashboardView" class="view hidden owner-only">
+        <article class="panel">
+          <div class="panel-header"><div><span class="eyebrow">QUALITY & ADOPTION</span><h3>Prototype dashboard</h3></div><button id="refreshDashboard" class="quiet-button">Refresh</button></div>
+          <p>Use real employee feedback and observed latency to decide what to improve next.</p>
+          <div id="dashboardMetrics" class="metric-grid"></div>
+          <div class="dashboard-split">
+            <div><span class="eyebrow">TOP REQUEST TYPES</span><div id="routeMetrics" class="route-metrics"></div></div>
+            <div class="quality-guidance"><span class="eyebrow">HOW TO READ THIS</span><p>A low helpful rate points to answer or retrieval quality. “Needs knowledge” means the assistant correctly refused to invent an organization-specific answer when no approved evidence was found.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="auditView" class="view hidden owner-only">
+        <article class="panel">
+          <div class="panel-header"><div><span class="eyebrow">CONTROL EVIDENCE</span><h3>Recent audit events</h3></div><button id="refreshAudit" class="quiet-button">Refresh</button></div>
+          <div id="auditList" class="audit-list"></div>
+        </article>
+      </section>
+
+      <section id="systemView" class="view hidden owner-only">
+        <div class="system-layout">
+          <article class="panel">
+            <div class="panel-header">
+              <div><span class="eyebrow">RAG SERVER STATUS</span><h3>Project services</h3></div>
+              <button id="refreshSystem" class="quiet-button" type="button">Refresh status</button>
+            </div>
+            <p>These controls affect only this AI workspace's project processes on the managed RAG server. Every action requires the separate service-control key.</p>
+            <div class="system-status-grid">
+              <div id="applicationServiceStatus" class="service-status-card pending"><span>WEB APPLICATION</span><strong>Checking&hellip;</strong><small>FastAPI and the employee workspace</small></div>
+              <div id="modelServiceStatus" class="service-status-card pending"><span>MODEL SERVER</span><strong>Checking&hellip;</strong><small>Project-local Ollama models</small></div>
+              <div id="serviceControlAvailability" class="service-status-card pending"><span>WEB CONTROLS</span><strong>Checking&hellip;</strong><small>Owner and service-key protection</small></div>
+            </div>
+            <div id="systemStatusMessage" class="system-status-message" role="status"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header"><div><span class="eyebrow">OWNER ACTIONS</span><h3>Start, stop or restart safely</h3></div></div>
+            <div class="system-action-groups">
+              <section>
+                <h4>Complete workspace</h4>
+                <div class="system-action-grid">
+                  <button class="system-action start" type="button" data-system-action="start_all" disabled><strong>Start all</strong><span>Start Ollama and the web application</span></button>
+                  <button class="system-action" type="button" data-system-action="restart_app" disabled><strong>Restart web app</strong><span>Keep Ollama running</span></button>
+                  <button class="system-action" type="button" data-system-action="restart_all" disabled><strong>Restart all</strong><span>Briefly interrupt the complete workspace</span></button>
+                  <button class="system-action danger" type="button" data-system-action="stop_all" disabled><strong>Stop all</strong><span>Requires SSH to start the page again</span></button>
+                </div>
+              </section>
+              <section>
+                <h4>Model server only</h4>
+                <div class="system-action-grid compact">
+                  <button class="system-action start" type="button" data-system-action="start_model" disabled><strong>Start model</strong><span>Keep the web application online</span></button>
+                  <button class="system-action" type="button" data-system-action="restart_model" disabled><strong>Restart model</strong><span>Answers may temporarily use fallback</span></button>
+                  <button class="system-action danger-soft" type="button" data-system-action="stop_model" disabled><strong>Stop model</strong><span>Leave retrieval fallback available</span></button>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="panel recovery-panel">
+            <span class="eyebrow">SSH RECOVERY</span>
+            <h3>When the page itself is stopped</h3>
+            <p>A stopped web application cannot start itself. Sign in to the RAG server and use the project-local command below.</p>
+            <pre id="systemRecoveryCommand">cd &lt;REMOTE_PROJECT_ROOT&gt; &amp;&amp; ./scripts/start_all.sh</pre>
+            <small id="systemRecoveryStatusCommand">Status: cd &lt;REMOTE_PROJECT_ROOT&gt; &amp;&amp; ./scripts/status.sh</small>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="onboardingDialog">
+    <form id="onboardingForm" method="dialog" class="onboarding-card">
+      <span class="eyebrow">PERSONALISE YOUR WORKSPACE</span>
+      <h2>Tell <span data-assistant-name>the assistant</span> how you work</h2>
+      <p>This creates editable user memory and a department access request. It does not retrain the model.</p>
+      <div class="form-grid">
+        <label>Department<select id="onboardingTeam" required></select></label>
+        <label>Preferred language<select id="preferredLanguage"></select></label>
+        <label class="wide">Role or job title<input id="roleTitle" required placeholder="Finance Manager"></label>
+        <label class="wide">Main responsibilities<textarea id="responsibilities" placeholder="What are you accountable for?"></textarea></label>
+        <label class="wide">Recurring tasks<textarea id="recurringTasks" placeholder="What do you repeat daily, weekly or monthly?"></textarea></label>
+        <label>Tools you use<input id="toolsUsed" placeholder="Zoho, Sheets, SQL&hellip;"></label>
+        <label>Automation goal<input id="automationGoals" placeholder="What would you like to automate first?"></label>
+      </div>
+      <div id="onboardingError" class="form-error"></div>
+      <button class="primary-button" type="submit">Create my workspace</button>
+    </form>
+  </dialog>
+  <dialog id="profileDialog">
+    <form id="profileForm" method="dialog" class="onboarding-card">
+      <div class="dialog-heading"><div><span class="eyebrow">EDITABLE EMPLOYEE MEMORY</span><h2>What <span data-assistant-name>the assistant</span> knows about me</h2></div><button id="closeProfile" class="dialog-close" type="button" aria-label="Close">&times;</button></div>
+      <p>This context improves answers but never changes your approved department access.</p>
+      <div class="form-grid">
+        <label class="wide">Role or job title<input id="profileRoleTitle" required></label>
+        <label class="wide">Main responsibilities<textarea id="profileResponsibilities"></textarea></label>
+        <label class="wide">Recurring tasks<textarea id="profileRecurringTasks"></textarea></label>
+        <label>Tools you use<input id="profileToolsUsed"></label>
+        <label>Automation goal<input id="profileAutomationGoals"></label>
+      </div>
+      <div id="profileError" class="form-error"></div>
+      <div class="dialog-actions"><button id="profileLogout" class="quiet-button danger-text" type="button">Sign out</button><button class="primary-button" type="submit">Save employee memory</button></div>
+    </form>
+  </dialog>
+  <dialog id="systemControlDialog">
+    <form id="systemControlForm" method="dialog" class="onboarding-card system-control-dialog">
+      <div class="dialog-heading">
+        <div><span class="eyebrow">CONFIRM SERVER ACTION</span><h2 id="systemActionTitle">Confirm action</h2></div>
+        <button id="closeSystemControl" class="dialog-close" type="button" aria-label="Close">&times;</button>
+      </div>
+      <p id="systemActionImpact"></p>
+      <div class="system-confirmation-note">Type <code id="systemConfirmationPhrase"></code> exactly, then enter the separate service-control key.</div>
+      <label>Confirmation phrase<input id="systemConfirmation" autocomplete="off" required></label>
+      <label>Service-control key<input id="systemAdminKey" type="password" autocomplete="off" required></label>
+      <div id="systemControlError" class="form-error"></div>
+      <div class="dialog-actions"><button id="cancelSystemControl" class="quiet-button" type="button">Cancel</button><button id="submitSystemControl" class="primary-button" type="submit">Confirm action</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast"></div>
+  <script src="/assets/app.js?v=19"></script>
+  <script src="/assets/enhancements.js?v=3"></script>
+</body>
+</html>

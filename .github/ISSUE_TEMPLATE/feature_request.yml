@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a focused improvement
+title: "feat: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Explain the user need without including internal or personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Describe the desired behavior and any alternatives considered.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Multilingual experience
+        - Voice input
+        - Knowledge retrieval
+        - Model orchestration
+        - Access and security
+        - Actions and integrations
+        - Quality and evaluation
+        - Documentation or developer experience
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable outcomes that would make the request complete.
+    validations:
+      required: true

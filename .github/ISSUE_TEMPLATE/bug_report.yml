@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem in OpenSource AI Workspace
+title: "bug: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the project. Do not include credentials, employee data, internal documents or vulnerability details. Use the private process in SECURITY.md for security reports.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the actual and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Start the application with...
+        2. Open...
+        3. Submit...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Windows local setup
+        - Linux local setup
+        - Docker Compose
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs or screenshots
+      description: Remove paths, credentials, email addresses, prompts and internal data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I removed sensitive and personal information from this report.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

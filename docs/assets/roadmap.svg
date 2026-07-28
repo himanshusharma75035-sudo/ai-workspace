@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">OpenSource AI Workspace roadmap</title>
+  <desc id="desc">The prototype progresses from an exploratory demonstration through stabilisation, a controlled pilot, approved actions and production readiness gates.</desc>
+  <defs>
+    <linearGradient id="b4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#073f32"/><stop offset="1" stop-color="#0b6d53"/></linearGradient>
+    <filter id="s4" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#001f17" flood-opacity="0.22"/></filter>
+    <marker id="a4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#d9ff52"/></marker>
+  </defs>
+  <rect width="1200" height="500" rx="28" fill="url(#b4)"/>
+  <text x="55" y="67" font-family="Arial" font-size="31" font-weight="700" fill="#ffffff">From exploratory demo to a controlled employee platform</text>
+  <text x="55" y="99" font-family="Arial" font-size="17" fill="#cce5dc">Each phase earns the right to move forward through quality, security and operational evidence.</text>
+  <line x1="132" y1="230" x2="1073" y2="230" stroke="#d9ff52" stroke-width="6" marker-end="url(#a4)"/>
+  <g filter="url(#s4)">
+    <rect x="45" y="153" width="210" height="241" rx="22" fill="#ffffff"/>
+    <rect x="285" y="153" width="210" height="241" rx="22" fill="#ffffff"/>
+    <rect x="525" y="153" width="210" height="241" rx="22" fill="#ffffff"/>
+    <rect x="765" y="153" width="210" height="241" rx="22" fill="#ffffff"/>
+    <rect x="1005" y="153" width="150" height="241" rx="22" fill="#d9ff52"/>
+  </g>
+  <circle cx="85" cy="192" r="22" fill="#0b8060"/><text x="85" y="199" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#fff">0</text>
+  <text x="119" y="198" font-family="Arial" font-size="17" font-weight="700" fill="#163c32">Prototype</text>
+  <text x="70" y="268" font-family="Arial" font-size="14" fill="#52665f"><tspan x="70">Multilingual chat</tspan><tspan x="70" dy="25">Visible AI work</tspan><tspan x="70" dy="25">Department RAG</tspan><tspan x="70" dy="25">Simulated actions</tspan></text>
+  <rect x="70" y="352" width="160" height="25" rx="12" fill="#e7f8f0"/><text x="150" y="369" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#00684f">CURRENT</text>
+
+  <circle cx="325" cy="192" r="22" fill="#0b8060"/><text x="325" y="199" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#fff">1</text>
+  <text x="359" y="198" font-family="Arial" font-size="17" font-weight="700" fill="#163c32">Stabilise</text>
+  <text x="310" y="268" font-family="Arial" font-size="14" fill="#52665f"><tspan x="310">Faster responses</tspan><tspan x="310" dy="25">Better evaluations</tspan><tspan x="310" dy="25">Document controls</tspan><tspan x="310" dy="25">Release rollback</tspan></text>
+
+  <circle cx="565" cy="192" r="22" fill="#0b8060"/><text x="565" y="199" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#fff">2</text>
+  <text x="599" y="198" font-family="Arial" font-size="17" font-weight="700" fill="#163c32">Pilot</text>
+  <text x="550" y="268" font-family="Arial" font-size="14" fill="#52665f"><tspan x="550">Google SSO</tspan><tspan x="550" dy="25">Role permissions</tspan><tspan x="550" dy="25">Retention rules</tspan><tspan x="550" dy="25">50–60 employees</tspan></text>
+
+  <circle cx="805" cy="192" r="22" fill="#0b8060"/><text x="805" y="199" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#fff">3</text>
+  <text x="839" y="198" font-family="Arial" font-size="17" font-weight="700" fill="#163c32">Actions</text>
+  <text x="790" y="268" font-family="Arial" font-size="14" fill="#52665f"><tspan x="790">Approved email</tspan><tspan x="790" dy="25">Ticket creation</tspan><tspan x="790" dy="25">Live data queries</tspan><tspan x="790" dy="25">Safe automations</tspan></text>
+
+  <text x="1080" y="194" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#163c32">Production</text>
+  <text x="1080" y="268" text-anchor="middle" font-family="Arial" font-size="14" fill="#385000"><tspan x="1080">Security</tspan><tspan x="1080" dy="25">Reliability</tspan><tspan x="1080" dy="25">Legal</tspan><tspan x="1080" dy="25">Monitoring</tspan></text>
+  <rect x="1025" y="352" width="110" height="25" rx="12" fill="#073f32"/><text x="1080" y="369" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#fff">GATES</text>
+  <text x="600" y="448" text-anchor="middle" font-family="Arial" font-size="16" fill="#d8eee6">No phase enables real actions or wider exposure without explicit approval and evidence.</text>
+</svg>
