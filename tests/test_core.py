@@ -1,6 +1,8 @@
 import asyncio
 from pathlib import Path
 
+from fastapi.testclient import TestClient
+
 from app import main as app_main
 from app.config import settings
 from app.database import ControlDatabase
@@ -19,6 +21,21 @@ from app.orchestrator import (
     build_execution_plan,
 )
 from app.service_control import SERVICE_ACTIONS, ServiceController, validate_service_request
+
+
+def test_public_session_exposes_only_safe_runtime_branding() -> None:
+    with TestClient(app_main.app) as client:
+        response = client.get("/api/session")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["branding"] == settings.public_branding
+    assert set(payload["branding"]) == {
+        "organization_name",
+        "assistant_name",
+        "organization_initial",
+        "allowed_email_domain",
+    }
+    assert "session_secret" not in payload["branding"]
 
 
 def test_health_response_does_not_expose_filesystem_path(monkeypatch) -> None:
